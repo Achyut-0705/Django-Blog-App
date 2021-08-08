@@ -16,7 +16,39 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-light navbar-expand-md sticky-top" style="background-color: #2c3531;">
+        <div class="container">
+            <div><i class="fa fa-book" style="color: rgba(255,255,255,0.9);font-size: 24px;margin-right: 10px;"></i><a
+                    class="navbar-brand" href="index.html"
+                    style="color: rgba(255,255,255,0.9);font-size: 25px;font-family: 'Noto Serif', serif;font-weight: bold;"><em>Book
+                        to Hook</em></a></div>
+            <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"
+                style="background-color: #cccccc;"><span class="sr-only">Toggle navigation</span><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link active nav_small" href="#"
+                            style="color: rgba(255,255,255,0.9);font-size: 18px;font-family: 'Noto Serif', serif;background-color: #37434d;margin-right: 20px;">Home</a>
+                    </li>
+                    <li class="nav-item" role="presentation"></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link nav_small" href="#"
+                            style="color: rgba(255,255,255,0.9);font-size: 18px;font-family: 'Noto Serif', serif;margin-right: 20px;">Register</a>
+                    </li>
+                    <li class="nav-item" role="presentation"><a class="nav-link nav_small" href="#"
+                            style="color: rgba(255,255,255,0.9);font-family: 'Noto Serif', serif;font-size: 18px;">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     {% block content %}{% endblock content%}
+    <footer class="footerOmolds">
+        <div class="col-auto text-center float-none align-self-end mx-auto visible"
+            style="height: 70px;margin-top: 5px;background-color: #2c3532;">
+            <p style="color: rgba(255,255,255,0.9);padding-top: 10px;">Made with ♥ for all the book&nbsp;<br>A work by
+                Achyut Shukla</p>
+        </div>
+    </footer>
     <script src="{% static 'assets/js/jquery.min.js'%}"></script>
     <script src="{% static 'assets/bootstrap/js/bootstrap.min.js'%}"></script>
 </body>
