@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="text-center"
+    style="padding: 40px;background-image: url(&quot;{% static 'assets/img/alfons-morales-YLSwjSy7stw-unsplash.jpg' %}&quot;);">
+    <div id="jumbo-container">
+        <div class="jumbotron border rounded" style="opacity: 0.80;background-color: rgb(21,25,30);">
+            <h1 style="color: rgb(255,255,255);font-size: 45px;line-height: 65px;letter-spacing: 1px;">Grab a book to unleash the best of you.</h1>
+            <p style="color: rgb(255,255,255);font-size: 20px;line-height: 30px;">Nullam id dolor id nibh ultricies
+                vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+            <p><a class="btn btn-primary text-center bg-dark" role="button" style="color: rgb(255,255,255);">Learn
+                    more</a></p>
+        </div>
+    </div>
+</div>
+<div class="container-fluid text-center" style="margin: 10px;margin-right: 0;">
+    <h1 style="margin: 5px;padding: 5px;line-height: 24px;letter-spacing: 5px;margin-top: 30px;">Introduction</h1>
+    <p class="text-break" style="margin: 5px;padding: 5px;">
+        <br>Lorem&nbsp;ipsum,&nbsp;dolor&nbsp;sit&nbsp;amet&nbsp;consectetur&nbsp;adipisicing&nbsp;elit.&nbsp;Sapiente&nbsp;enim&nbsp;ad,&nbsp;eum&nbsp;aut&nbsp;consequatur&nbsp;facilis&nbsp;voluptatibus.Rem&nbsp;repellendus&nbsp;nesciunt&nbsp;sequi&nbsp;maxime&nbsp;voluptates&nbsp;possimus&nbsp;a,&nbsp;saepe&nbsp;cumque&nbsp;consequuntur&nbsp;omnis&nbsp;veniam&nbsp;minus&nbsp;ipsam!&nbsp;Sed&nbsp;adlaudantium,&nbsp;magnam&nbsp;culpa&nbsp;magni&nbsp;sequi&nbsp;animi&nbsp;laborum&nbsp;ut&nbsp;fugiat&nbsp;porro&nbsp;vel&nbsp;explicabo&nbsp;placeat&nbsp;laboriosam&nbsp;quia&nbsp;quamconsequuntur&nbsp;doloremque,&nbsp;enim&nbsp;maiores&nbsp;nemo,&nbsp;perspiciatis&nbsp;labore&nbsp;quod&nbsp;est&nbsp;illum?&nbsp;Voluptas&nbsp;repellendus&nbsp;aliquam,&nbsp;liberoperspiciatis&nbsp;at&nbsp;sint&nbsp;quae&nbsp;iste.&nbsp;Eos&nbsp;omnis&nbsp;quia&nbsp;velit&nbsp;voluptatem.&nbsp;Iure&nbsp;non&nbsp;ratione&nbsp;minus&nbsp;nesciunt&nbsp;expedita.&nbsp;Eligendiquisquam&nbsp;ad&nbsp;minus&nbsp;labore&nbsp;facilis&nbsp;inventore&nbsp;quo,&nbsp;ratione&nbsp;ut&nbsp;voluptates&nbsp;accusantium&nbsp;beatae,&nbsp;quam&nbsp;corporis!&nbsp;Asperioresincidunt&nbsp;aliquid&nbsp;quas&nbsp;distinctio&nbsp;sapiente!<br><br>
+    </p>
+</div>
+<div class="container-fluid text-center" style="margin: 10px;">
+    <h1 style="margin: 5px;padding: 5px;line-height: 24px;letter-spacing: 5px;margin-bottom: 5px;">Images</h1>
+    <div class="row" style="margin-top: 32px;">
+        <div class="col-4" data-bs-hover-animate="pulse">
+            <div class="card"><a href="{% static 'assets/img/jez-timms-8muUTAmcWU4-unsplash.jpg'%}" target="_blank" data-lightbox="LibImage" data-title="Image Caption"><img class="img-thumbnail img-fluid"
+                        src="{% static 'assets/img/jez-timms-8muUTAmcWU4-unsplash.jpg'%}" loading="lazy"></a>
+                <div class="card-body">
+                    <h4 class="card-title">Image 1</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-4" data-bs-hover-animate="pulse">
+            <div class="card">
+                <a href="{% static 'assets/img/chuttersnap-Zf64Osndqvc-unsplash.jpg'%}" target="_blank" data-lightbox="LibImage" data-title="Image caption">
+                    <img class="img-thumbnail" src="{% static 'assets/img/chuttersnap-Zf64Osndqvc-unsplash.jpg'%}">                    
+                    </a>
+                <div class="card-body">
+                    <h4 class="card-title">Image 2</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-4" data-bs-hover-animate="pulse">
+            <div class="card"><a href="{% static 'assets/img/daniel-zjV8ptYgcEo-unsplash.jpg'%}" target="_blank" data-lightbox="LibImage" data-title="Image Caption"><img class="img-thumbnail"
+                        src="{% static 'assets/img/daniel-zjV8ptYgcEo-unsplash.jpg'%}"></a>
+                <div class="card-body">
+                    <h4 class="card-title">Image 3</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
