@@ -2,6 +2,7 @@ from django.db import models
 from Portal.settings import BASE_DIR
 from django.contrib.auth.models import User
 from django.utils import timezone
+from django.contrib.auth.hashers import make_password
 import os
 
 class User(models.Model):
@@ -13,8 +14,18 @@ class User(models.Model):
     email = models.EmailField(blank=True, max_length=254)
     phone = models.CharField(blank=True, max_length=10)
     
+    def __init__(self,*args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.password = make_password(self.password)
+            
     def __str__(self):
         return self.username
+    
+    def delete(self,*args, **kwargs):
+        posts = Post.objects.filter(author=User.objects.filter(username=self.username))
+        for post in posts:
+            post.delete()
+        super().delete(*args, **kwargs)
 
 class Post(models.Model):
     path = os.path.join(BASE_DIR, 'media')
@@ -26,3 +37,7 @@ class Post(models.Model):
     
     def __str__(self):
         return self.title
+    
+    def delete(self, *args, **kwargs):
+        self.thumbnail.delete()
+        super().delete(*args, **kwargs)
