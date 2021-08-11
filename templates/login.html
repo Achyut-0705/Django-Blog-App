@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="register-photo">
+<div class="register-photo" style="background-color: #cccccc;">
     <div class="form-container">
         <div class="image-holder"></div>
-        <form action="login" method="POST">
+        <form action="login" method="POST" >
             {% csrf_token %}
             <h2 class="text-center"><strong>Log</strong> in.</h2>
             <div class="form-group"><input class="form-control" type="text" name="username" placeholder="Username">

@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container text-center profile profile-view" id="profile" style="margin-bottom: 0px;width: 100%;">
+    <div class="row">
+        <div class="col-md-12 alert-col relative">
+            <div class="alert alert-info absolue center" role="alert"><button type="button" class="close"
+                    data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><span>Profile save
+                    with success</span></div>
+        </div>
+    </div>
+    <form class="form-inline text-center"
+        style="width: 100%;height: 50%;margin-top: 2em;padding-top: 10px;margin-left: 11%;">
+        <div class="form-row profile-row">
+            <div class="col-md-4 relative">
+                <div class="text-center avatar">
+                    <div class="d-flex flex-shrink-1 justify-content-center align-items-center align-content-center flex-wrap avatar-bg center"
+                        data-bs-hover-animate="pulse"
+                        style="margin-bottom: 10px;background-image: url(&quot;{% static 'assets/img/chuttersnap-Zf64Osndqvc-unsplash.jpg'%}&quot;);background-position: center;background-size: cover;background-repeat: no-repeat;">
+                        <div class="jumbotron text-center border rounded-circle"
+                            style="width: 100%;height: 100%;margin: 0px;opacity: 0.40;color: rgb(34,35,35);"></div>
+                    </div>
+                </div><input type="file" id="file-input" class="form-control" name="profile_picture"
+                    style="background-color: #cccccc;width: 104px;height: 37px;padding-left: 0px;padding-right: 0px;"
+                    accept="image/*">
+            </div>
+            <div class="col-md-8">
+                <h1>Edit Profile <i class="fa fa-edit"></i></h1>
+                <hr>
+                <div class="form-row" style="padding-top: 10px;">
+                    <div class="col-sm-12 col-md-6">
+                        <div class="form-group" style="padding-right: 10px;"><label>Firstname </label><input
+                                class="form-control" type="text" name="firstname" placeholder="Example: John"
+                                autocomplete="on" autofocus="" style="width: 238px;"></div>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div class="form-group" style="margin-left: 11px;"><label>Lastname </label><input
+                                class="form-control" type="text" name="lastname" placeholder="Example: William"
+                                autocomplete="on" style="width: 232px;"></div>
+                    </div>
+                </div>
+                <div class="form-row" style="padding-top: 10px;">
+                    <div class="col-sm-12 col-md-6">
+                        <div class="form-group" style="padding-right: 10px;"><label>Email</label><input
+                                class="form-control" type="email" name="email" placeholder="Company@example.com"
+                                autocomplete="on" inputmode="email" style="width: 238px;"></div>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div class="form-group" style="margin-left: 11px;"><label>Phone Number</label><input
+                                class="form-control" type="tel" placeholder="Example: +91 - 123456789" autocomplete="on"
+                                style="width: 232px;"></div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-12 text-center d-flex d-lg-flex flex-row flex-grow-0 align-items-center flex-wrap justify-content-lg-center align-items-lg-center content-right"
+                        style="margin-top: 40px;padding-left: 0px;"><button
+                            class="btn btn-primary text-center d-lg-flex justify-content-lg-center align-items-lg-center form-btn"
+                            type="submit" style="margin: 0;margin-right: 5%;margin-left: 0;">SAVE </button><button
+                            class="btn btn-danger text-center form-btn" type="reset"
+                            style="margin: 0;margin-left: 5px;">CANCEL </button>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock content %}

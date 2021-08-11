@@ -41,3 +41,6 @@ def register(request):
             return HttpResponse('user exist')
         return HttpResponse('form not valid')
     return render(request, 'register.html',{'title': 'Register'})
+
+def edit(request):
+    return render(request, 'EditProfile.html',{'title': 'Profile Edit'})
