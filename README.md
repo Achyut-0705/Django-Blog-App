@@ -13,6 +13,6 @@ To use this project, run following command on terminal
 
 `pip install boto3`
 
-Now clone this repo and insert your s3 credentials in credentials.env file
+Now clone this repo and insert your s3 credentials in Credentials.env file
 
 Feel free to fork this and modify. Cheers to developers community. Always
