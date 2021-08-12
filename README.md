@@ -1,4 +1,4 @@
-# Student-Management-System
+# Library-Management-System
 
 A django based application with user authentication system and capabilities like uploading post along with thumnails which are to be stored in aws s3 storage.
 There is always a room for improvement.
