@@ -8,5 +8,11 @@ Future plans/features to implement:
 2. Put up worthy content 
 3. List doesn't stop but works at a slow pace
 
+To use this project, run following command on terminal
+`pip install django-storages`
+
+`pip install boto3`
+
+Now clone this repo and insert your s3 credentials in credentials.env file
 
 Feel free to fork this and modify. Cheers to developers community. Always
