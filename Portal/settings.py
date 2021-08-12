@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -127,3 +128,16 @@ STATICFILES_DIRS = [
 STATIC_URL = '/static/'
 
 APPEND_SLASH = True
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+
+
+with open(os.path.join(BASE_DIR,'Credentials.env'),'r') as f:
+    AWS_ACCESS_KEY_ID = f.readline()[:-2]
+    AWS_SECRET_ACCESS_KEY = f.readline()[:-2]
+    AWS_STORAGE_BUCKET_NAME =  f.readline()[:-2]
+    
+    
+
+AWS_QUERYSTRING_AUTH = False

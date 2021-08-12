@@ -17,7 +17,7 @@ def login(request):
             
             if check_password(form.cleaned_data['password'], user.password):
                 return HttpResponse('logged in')
-            return render(request, 'login.html', {'status_message': 'Username or Password invalid', 'status_code': 0})
+            return render(request, 'login.html', {'status_message': 'Invalid Credentials', 'status_code': 0})
     return render(request, 'login.html',{'title': 'Login'})
 
 

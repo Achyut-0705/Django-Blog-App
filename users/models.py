@@ -28,9 +28,9 @@ class User(models.Model):
         super().delete(*args, **kwargs)
 
 class Post(models.Model):
-    path = os.path.join(BASE_DIR, 'media')
+    # path = os.path.join(BASE_DIR, 'media')
     title = models.CharField(max_length=100)
-    thumbnail = models.FileField(upload_to=path)
+    thumbnail = models.FileField(upload_to='media/')
     description = models.TextField()
     dateposted = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User , on_delete= models.CASCADE)
