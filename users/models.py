@@ -3,7 +3,10 @@ from Portal.settings import BASE_DIR
 from django.contrib.auth.models import User
 from django.utils import timezone
 from django.contrib.auth.hashers import make_password
-import os
+
+
+def directory(instance, filename):
+    return 'posts/{}/{}.'.format(instance.author.username, filename)
 
 class User(models.Model):
     username = models.CharField(max_length=25)
@@ -28,9 +31,8 @@ class User(models.Model):
         super().delete(*args, **kwargs)
 
 class Post(models.Model):
-    # path = os.path.join(BASE_DIR, 'media')
     title = models.CharField(max_length=100)
-    thumbnail = models.FileField(upload_to='media/')
+    thumbnail = models.ImageField(upload_to=directory)
     description = models.TextField()
     dateposted = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User , on_delete= models.CASCADE)
@@ -39,5 +41,5 @@ class Post(models.Model):
         return self.title
     
     def delete(self, *args, **kwargs):
-        self.thumbnail.delete()
+        self.thumbnail.delete(save = False)
         super().delete(*args, **kwargs)

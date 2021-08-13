@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
+from decouple import config
 from pathlib import Path
 import os
 
@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'zx4e&%*1*3h6k8cyb21l)c+!if1%6#paa!h#n9y2i1op2#l6a&'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -121,19 +121,20 @@ DATETIME_FORMAT = '%d-%m-%Y-%H-%M-%S'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-]
 
-STATIC_URL = '/static/'
 
 APPEND_SLASH = True
 
 AWS_QUERYSTRING_AUTH = False
 
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-with open(os.path.join(BASE_DIR,'Credentials.env'),'r') as f:
-    AWS_ACCESS_KEY_ID = f.readline()[:-1]
-    AWS_SECRET_ACCESS_KEY = f.readline()[:-1]
-    AWS_STORAGE_BUCKET_NAME =  f.readline()
+AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME =  config('AWS_STORAGE_BUCKET_NAME')
+
+STATIC_URL = 'https://{}.ap-south-1.amazonaws.com/'.format(AWS_STORAGE_BUCKET_NAME)
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
