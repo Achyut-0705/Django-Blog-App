@@ -129,15 +129,11 @@ STATIC_URL = '/static/'
 
 APPEND_SLASH = True
 
+AWS_QUERYSTRING_AUTH = False
+
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-
-
 with open(os.path.join(BASE_DIR,'Credentials.env'),'r') as f:
-    AWS_ACCESS_KEY_ID = f.readline()[:-2]
-    AWS_SECRET_ACCESS_KEY = f.readline()[:-2]
-    AWS_STORAGE_BUCKET_NAME =  f.readline()[:-2]
-    
-    
-
-AWS_QUERYSTRING_AUTH = False
+    AWS_ACCESS_KEY_ID = f.readline()[:-1]
+    AWS_SECRET_ACCESS_KEY = f.readline()[:-1]
+    AWS_STORAGE_BUCKET_NAME =  f.readline()
