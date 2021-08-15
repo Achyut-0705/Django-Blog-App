@@ -21,6 +21,22 @@
 
     <link rel="stylesheet" href="{% static 'assets/css/Profile-Edit-Form.css'%}">
 
+    <style>
+        #footer {
+            position: absolute;
+            height: 50px;
+            /* background-color: red;
+            bottom: 0px; */
+            left: 0px;
+            right: 0px;
+            margin-top: 20px;
+            margin-bottom: 0px;
+        }
+
+        body {
+            margin-bottom: 70px;
+        }
+    </style>
 </head>
 
 <body style="font-family: 'Noto Serif', serif;background-color: #cccccc;">
@@ -57,9 +73,9 @@
         </div>
     </nav>
     {% block content %}{% endblock content%}
-    <footer class="footerOmolds">
+    <footer id="footer" class="footerOmolds">
         <div class="col-auto text-center float-none align-self-end mx-auto visible"
-            style="height: 70px;margin-top: 5px;background-color: #2c3532;">
+            style="height: 80px;margin-top: 5px;background-color: #2c3532;">
             <p style="color: rgba(255,255,255,0.9);padding-top: 10px;">Made with ♥ for all the book lovers&nbsp;<br>A
                 work by
                 Achyut Shukla</p>

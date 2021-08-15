@@ -10,7 +10,7 @@ def directory(instance, filename):
 
 class User(models.Model):
     username = models.CharField(max_length=25)
-    password = models.CharField(max_length=20)
+    password = models.CharField(max_length=100)
     title = models.CharField(blank=True, max_length=5)
     firstname = models.CharField(blank=True, max_length=30)
     lastname = models.CharField(blank=True, max_length=30)
