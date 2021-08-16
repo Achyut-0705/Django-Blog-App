@@ -20,51 +20,46 @@
         <br>Lorem&nbsp;ipsum,&nbsp;dolor&nbsp;sit&nbsp;amet&nbsp;consectetur&nbsp;adipisicing&nbsp;elit.&nbsp;Sapiente&nbsp;enim&nbsp;ad,&nbsp;eum&nbsp;aut&nbsp;consequatur&nbsp;facilis&nbsp;voluptatibus.Rem&nbsp;repellendus&nbsp;nesciunt&nbsp;sequi&nbsp;maxime&nbsp;voluptates&nbsp;possimus&nbsp;a,&nbsp;saepe&nbsp;cumque&nbsp;consequuntur&nbsp;omnis&nbsp;veniam&nbsp;minus&nbsp;ipsam!&nbsp;Sed&nbsp;adlaudantium,&nbsp;magnam&nbsp;culpa&nbsp;magni&nbsp;sequi&nbsp;animi&nbsp;laborum&nbsp;ut&nbsp;fugiat&nbsp;porro&nbsp;vel&nbsp;explicabo&nbsp;placeat&nbsp;laboriosam&nbsp;quia&nbsp;quamconsequuntur&nbsp;doloremque,&nbsp;enim&nbsp;maiores&nbsp;nemo,&nbsp;perspiciatis&nbsp;labore&nbsp;quod&nbsp;est&nbsp;illum?&nbsp;Voluptas&nbsp;repellendus&nbsp;aliquam,&nbsp;liberoperspiciatis&nbsp;at&nbsp;sint&nbsp;quae&nbsp;iste.&nbsp;Eos&nbsp;omnis&nbsp;quia&nbsp;velit&nbsp;voluptatem.&nbsp;Iure&nbsp;non&nbsp;ratione&nbsp;minus&nbsp;nesciunt&nbsp;expedita.&nbsp;Eligendiquisquam&nbsp;ad&nbsp;minus&nbsp;labore&nbsp;facilis&nbsp;inventore&nbsp;quo,&nbsp;ratione&nbsp;ut&nbsp;voluptates&nbsp;accusantium&nbsp;beatae,&nbsp;quam&nbsp;corporis!&nbsp;Asperioresincidunt&nbsp;aliquid&nbsp;quas&nbsp;distinctio&nbsp;sapiente!<br><br>
     </p>
 </div>
+
+
 <div class="container-fluid text-center" style="margin: 10px;">
     <h1 style="margin: 5px;padding: 5px;line-height: 24px;letter-spacing: 5px;margin-bottom: 5px;">Images</h1>
-    <div class="row row-eq-height" style="margin-top: 32px;">
+
+    <div class="row justify-content-center align-items-center"
+        style="margin: 10px;margin-right: 0px;margin-left: 0px;margin-top: 10px;margin-bottom: 0px;padding: 0px;padding-top: 0px;padding-left: 5px;padding-right: 5px;">
         {% for post in posts %}
-        <div class="col-4" data-bs-hover-animate="pulse">
-            <div class="card"><a href="{{ post.thumbnail.url }}" target="_blank"
-                    data-lightbox="LibImage" data-title="Image Caption"><img class="img-thumbnail img-fluid"
-                        src="{{ post.thumbnail.url }}" loading="lazy"></a>
-                <div class="card-body">
-                    <h4 class="card-title"> {{ post.title }} </h4>
-                    <p class="text-center card-text"> {{ post.description}} </p>
+
+
+        <div class="col-auto col-sm-10 col-md-4 col-lg-4 col-xl-4" style="margin-top: 10px;padding-top: 5px;">
+            <div class="card">
+                <a class="stretched-link text-center" data-lightbox="LibImage" data-title="Image Caption"
+                    href="{{ post.thumbnail.url  }}" target="_blank">
+                    <img class="card-img-top w-100 d-block" src="{{ post.thumbnail.url  }}" />
+
+                </a>
+                <div class="card-body" style="padding: 0px;">
+                    <h2 class="text-center card-title" style="margin-bottom: 5px;">{{ post.title }}</h2>
+                    <p class="text-center card-text">{{ post.description }}</p>
+                </div>
+            </div>
+            <div class="row justify-content-center align-items-center" style="margin-right: 0px;margin-top: 10px;">
+                <div
+                    class="col d-flex d-md-flex d-lg-flex d-xl-flex flex-row flex-grow-1 flex-shrink-1 flex-fill justify-content-center align-items-center align-self-center flex-nowrap m-auto justify-content-sm-center align-items-sm-center justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center">
+                    <a href="#"><i class="fa fa-heart-o"
+                            style="font-size: 32px;width: 32;height: 31;color: rgb(0,0,0);"></i></a><label
+                        style="margin-left: 5px;padding-left: 5px;font-size: 20px;">250</label>
+                    <div role="group" class="btn-group" style="padding: 5px;margin: 5px;"><button
+                            class="btn text-center flex-column flex-grow-1 flex-shrink-1 flex-fill justify-content-center align-items-center align-content-center flex-nowrap m-auto"
+                            type="button" style="width: 100%;height: 100%;"></button></div>
+                    <div class="d-lg-flex flex-row justify-content-lg-center avatar-bg center"
+                        style="width: 50px;height: 26px;margin-left: 0px;margin-right: 0px;background-position: center;background-repeat: no-repeat;">
+                    </div><a class="stretched-link text-body d-lg-flex justify-content-lg-center align-items-lg-center"
+                        href="#" target="_blank" style="width: 100%;"><label
+                            class="d-lg-flex justify-content-lg-start align-items-lg-center"
+                            style="font-size: 20px;margin-left: 5px;padding-left: 0px;" for="username">{{ post.author.username }}</label></a>
                 </div>
             </div>
         </div>
         {% endfor %}
     </div>
-    <!-- <div class="col-4" data-bs-hover-animate="pulse">
-            <div class="card"><a href="{% static 'assets/img/jez-timms-8muUTAmcWU4-unsplash.jpg'%}" target="_blank"
-                    data-lightbox="LibImage" data-title="Image Caption"><img class="img-thumbnail img-fluid"
-                        src="{% static 'assets/img/jez-timms-8muUTAmcWU4-unsplash.jpg'%}" loading="lazy"></a>
-                <div class="card-body">
-                    <h4 class="card-title">Image 1</h4>
-                </div>
-            </div>
-        </div>
-        <div class="col-4" data-bs-hover-animate="pulse">
-            <div class="card">
-                <a href="{% static 'assets/img/chuttersnap-Zf64Osndqvc-unsplash.jpg'%}" target="_blank"
-                    data-lightbox="LibImage" data-title="Image caption">
-                    <img class="img-thumbnail" src="{% static 'assets/img/chuttersnap-Zf64Osndqvc-unsplash.jpg'%}">
-                </a>
-                <div class="card-body">
-                    <h4 class="card-title">Image 2</h4>
-                </div>
-            </div>
-        </div>
-        <div class="col-4" data-bs-hover-animate="pulse">
-            <div class="card"><a href="{% static 'assets/img/daniel-zjV8ptYgcEo-unsplash.jpg'%}" target="_blank"
-                    data-lightbox="LibImage" data-title="Image Caption"><img class="img-thumbnail"
-                        src="{% static 'assets/img/daniel-zjV8ptYgcEo-unsplash.jpg'%}"></a>
-                <div class="card-body">
-                    <h4 class="card-title">Image 3</h4>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
     {% endblock content %}
