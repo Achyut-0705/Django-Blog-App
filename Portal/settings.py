@@ -25,11 +25,11 @@ SECRET_KEY = config('SECRET_KEY')
 # SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = False
-DEBUG = True
+DEBUG = False
+# DEBUG = True
 
 # ALLOWED_HOSTS = ['project-anvita-1994.herokuapp.com']
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['project-anvita-1994.herokuapp.com']
 
 
 # Application definition
